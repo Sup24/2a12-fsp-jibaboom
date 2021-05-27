@@ -18,7 +18,7 @@
 -   You may choose to use reactjs/bootstrap/jquery to help with your development.
 -   You should not be connecting to any persistent data storage unless for caching.
 
-## Sample wireframes
+## Sample wireframes - If unable to view on Github, kindly click individual wireframes which I uploaded
 
 ![sample-wireframe-data-viewer](../assets/sample-wireframe-data-viewer-frontend.png)
 
