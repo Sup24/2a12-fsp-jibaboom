@@ -1,0 +1,1040 @@
+
+#### Backend Test Cases
+
+
+ 
+###
+## Inserting basic data 
+## If double-click, gives duplicate error
+# POST http://localhost:3000/basic/insert HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "data": [
+        
+#         {
+#             "meetingId": 9087700997,
+#             "availabilityId": 1222430402,
+#             "participantId": 2071567765,
+#             "startTime": "1000",
+#             "endTime": "1200"
+#         },
+#         {
+#             "meetingId": 9977867543,
+#             "availabilityId": 1344657745,
+#             "participantId": 2933453368,
+#             "startTime": "1130",
+#             "endTime": "1400"
+#         },
+#         {
+#             "meetingId": 9087700997,
+#             "availabilityId": 1255467354,
+#             "participantId": 2333980007,
+#             "startTime": "1200",
+#             "endTime": "1400"
+#         },
+#         {
+#             "meetingId": 9755465766,
+#             "availabilityId": 1765900542,
+#             "participantId": 2099003455,
+#             "startTime": "0900",
+#             "endTime": "1130"
+#         }
+#     ]
+# }
+
+###
+## This is where we insert records(advance)
+## When we enter duplicate info, it gives us an error "duplicate key value violates unique constraint"
+# POST http://localhost:3000/advance/insert HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "data": [
+#         {
+#             "meetingId": 9087700997,
+#             "unavailabilityId": 3456789012,
+#             "participantId": 2071567765,
+#             "startTime": "1000",
+#             "endTime": "1200"
+#         },
+#         {
+#             "meetingId": 9977867543,
+#             "unavailabilityId": 3210987654,
+#             "participantId": 2933453368,
+#             "startTime": "1130",
+#             "endTime": "1400"
+#         },
+#         {
+#             "meetingId": 9087700997,
+#             "unavailabilityId": 3901287654,
+#             "participantId": 2333980007,
+#             "startTime": "1200",
+#             "endTime": "1400"
+#         },
+#         {
+#             "meetingId": 9755465766,
+#             "unavailabilityId": 3901284567,
+#             "participantId": 2099003455,
+#             "startTime": "0900",
+#             "endTime": "1130"
+#         },
+#                 {
+#             "meetingId": 9087700997,
+#             "unavailabilityId": 3456789012,
+#             "participantId": 2071567765,
+#             "startTime": "1000",
+#             "endTime": "1200"
+#         },
+#         {
+#             "meetingId": 9977867543,
+#             "unavailabilityId": 3210987654,
+#             "participantId": 2933453368,
+#             "startTime": "1130",
+#             "endTime": "1400"
+#         },
+#         {
+#             "meetingId": 9087700997,
+#             "unavailabilityId": 3901287654,
+#             "participantId": 2333980007,
+#             "startTime": "1200",
+#             "endTime": "1400"
+#         },
+#         {
+#             "meetingId": 9755465766,
+#             "unavailabilityId": 3901284567,
+#             "participantId": 2099003455,
+#             "startTime": "0900",
+#             "endTime": "1130"
+#         }
+#     ]
+# }
+
+###
+## Insert basic data
+## When we enter duplicate info, it gives us an error "duplicate key value violates unique constraint"
+## (double click)
+# POST http://localhost:3000/basic/insert HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "data": [
+#         {
+#             "meetingId": 9977700997,
+#             "availabilityId": 1222430402,
+#             "participantId": 2071567765,
+#             "startTime": "1000",
+#             "endTime": "1200"
+#         },
+#         {
+#             "meetingId": 9977867543,
+#             "availabilityId": 1344657745,
+#             "participantId": 2933453368,
+#             "startTime": "1130",
+#             "endTime": "1400"
+#         },
+#         {
+#             "meetingId": 9455354555,
+#             "availabilityId": 1255467354,
+#             "participantId": 2333980007,
+#             "startTime": "1200",
+#             "endTime": "1400"
+#         },
+#         {
+#             "meetingId": 9755465766,
+#             "availabilityId": 1765900542,
+#             "participantId": 2099003455,
+#             "startTime": "0900",
+#             "endTime": "1130"
+#         }
+#     ]
+# }
+
+###
+## When we enter duplicate info, it gives us an error "duplicate key value violates unique constraint"
+## (double click)
+# POST http://localhost:3000/basic/insert HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "data": [
+#         {
+#             "meetingId": 9111111111,
+#             "availabilityId": 1111111111,
+#             "participantId": 2111111111,
+#             "startTime": "0700",
+#             "endTime": "0900"
+#         },
+#         {
+#             "meetingId": 9111111111,
+#             "availabilityId": 1222222222,
+#             "participantId": 2222222222,
+#             "startTime": "0800",
+#             "endTime": "1000"
+#         },
+#         {
+#             "meetingId": 9111111111,
+#             "availabilityId": 1333333333,
+#             "participantId": 2333333333,
+#             "startTime": "0830",
+#             "endTime": "1030"
+#         },
+#         {
+#             "meetingId": 9111111111,
+#             "availabilityId": 1444444444,
+#             "participantId": 2444444444,
+#             "startTime": "1700",
+#             "endTime": "1800"
+#         },
+#                 {
+#             "meetingId": 9222222222,
+#             "availabilityId": 3111111111,
+#             "participantId": 2111111111,
+#             "startTime": "0900",
+#             "endTime": "1100"
+#         },
+#         {
+#             "meetingId": 9222222222,
+#             "availabilityId": 3222222222,
+#             "participantId": 2222222222,
+#             "startTime": "1100",
+#             "endTime": "1300"
+#         },
+#         {
+#             "meetingId": 9222222222,
+#             "availabilityId": 3333333333,
+#             "participantId": 2333333333,
+#             "startTime": "1400",
+#             "endTime": "1800"
+#         },
+#         {
+#             "meetingId": 9222222222,
+#             "availabilityId": 3444444444,
+#             "participantId": 2444444444,
+#             "startTime": "2200",
+#             "endTime": "2300"
+#         },
+#         {
+#             "meetingId": 9222222222,
+#             "availabilityId": 3555555555,
+#             "participantId": 2555555555,
+#             "startTime": "1230",
+#             "endTime": "1400"
+#         }
+#     ]
+# }
+
+###
+## Insert advance data
+## When we enter duplicate info, it gives us an error "duplicate key value violates unique constraint"
+## (double click)
+# POST http://localhost:3000/advance/insert HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "data": [
+#         {
+#             "meetingId": 9111111111,
+#             "unavailabilityId": 1111111111,
+#             "participantId": 2111111111,
+#             "startTime": "0700",
+#             "endTime": "0900"
+#         },
+#         {
+#             "meetingId": 9111111111,
+#             "unavailabilityId": 1222222222,
+#             "participantId": 2222222222,
+#             "startTime": "0800",
+#             "endTime": "1000"
+#         },
+#         {
+#             "meetingId": 9111111111,
+#             "unavailabilityId": 1333333333,
+#             "participantId": 2333333333,
+#             "startTime": "0830",
+#             "endTime": "1030"
+#         },
+#         {
+#             "meetingId": 9111111111,
+#             "unavailabilityId": 1444444444,
+#             "participantId": 2444444444,
+#             "startTime": "1700",
+#             "endTime": "1800"
+#         },
+#                 {
+#             "meetingId": 9222222222,
+#             "unavailabilityId": 3111111111,
+#             "participantId": 2111111111,
+#             "startTime": "0900",
+#             "endTime": "1100"
+#         },
+#         {
+#             "meetingId": 9222222222,
+#             "unavailabilityId": 3222222222,
+#             "participantId": 2222222222,
+#             "startTime": "1100",
+#             "endTime": "1300"
+#         },
+#         {
+#             "meetingId": 9222222222,
+#             "unavailabilityId": 3333333333,
+#             "participantId": 2333333333,
+#             "startTime": "1400",
+#             "endTime": "1800"
+#         },
+#         {
+#             "meetingId": 9222222222,
+#             "unavailabilityId": 3444444444,
+#             "participantId": 2444444444,
+#             "startTime": "2200",
+#             "endTime": "2300"
+#         },
+#         {
+#             "meetingId": 9222222222,
+#             "unavailabilityId": 3555555555,
+#             "participantId": 2555555555,
+#             "startTime": "1230",
+#             "endTime": "1400"
+#         }
+#     ]
+# }
+
+
+
+
+## Basic (MTV)
+###
+## Retrieving basic data from meetingInfo by meetingId and participantId
+# GET http://localhost:3000/basic/data?meetingId=9999999991&participantId=9999999991 HTTP/1.1
+# Content-Type: application/json
+
+###
+## Testing the retrieval of data from meetingInfo for Basic Data API
+GET http://localhost:3000/basic/data HTTP/1.1
+Content-Type: application/json
+
+
+
+# Expected AND Actual Outcome (Test Passed)
+
+# [
+#   {
+#     "meetingid": "1110000001",
+#     "availabilityid": "1000000001",
+#     "participantid": "1100000001",
+#     "starttime": "1000",
+#     "endtime": "1045"
+#   },
+#   {
+#     "meetingid": "1110000001",
+#     "availabilityid": "1000000002",
+#     "participantid": "1100000001",
+#     "starttime": "1030",
+#     "endtime": "1100"
+#   },
+#   {
+#     "meetingid": "1110000001",
+#     "availabilityid": "1000000003",
+#     "participantid": "1100000002",
+#     "starttime": "1030",
+#     "endtime": "1115"
+#   },
+#   {
+#     "meetingid": "1110000001",
+#     "availabilityid": "1000000004",
+#     "participantid": "1100000002",
+#     "starttime": "1100",
+#     "endtime": "1130"
+#   },
+#   {
+#     "meetingid": "1110000002",
+#     "availabilityid": "1000000005",
+#     "participantid": "1100000001",
+#     "starttime": "1000",
+#     "endtime": "1100"
+#   },
+#   {
+#     "meetingid": "1110000002",
+#     "availabilityid": "1000000006",
+#     "participantid": "1100000002",
+#     "starttime": "1100",
+#     "endtime": "1200"
+#   },
+#   {
+#     "meetingid": "1110000002",
+#     "availabilityid": "1000000007",
+#     "participantid": "1100000003",
+#     "starttime": "1200",
+#     "endtime": "1300"
+#   },
+#   {
+#     "meetingid": "1110000003",
+#     "availabilityid": "1000000008",
+#     "participantid": "1100000004",
+#     "starttime": "1000",
+#     "endtime": "1100"
+#   },
+#   {
+#     "meetingid": "1110000003",
+#     "availabilityid": "1000000009",
+#     "participantid": "1100000005",
+#     "starttime": "1045",
+#     "endtime": "1230"
+#   },
+#   {
+#     "meetingid": "1110000003",
+#     "availabilityid": "1000000010",
+#     "participantid": "1100000006",
+#     "starttime": "1030",
+#     "endtime": "1200"
+#   }
+# ] ......
+
+###
+## Testing the retrieval of data by meetingId
+# GET http://localhost:3000/basic/data?meetingId=9977867543 HTTP/1.1
+# Content-Type: application/json
+
+###
+## Retrieving the best time and participants available for a specific meeting by its meetingId
+# GET http://localhost:3000/basic/result?meetingId=9111111111 HTTP/1.1
+# Content-Type: application/json
+
+###
+## Retrieving the best time and participants available for a specific meeting by its meetingId
+# GET http://localhost:3000/basic/result?meetingId=9222222222 HTTP/1.1
+# Content-Type: application/json
+
+###
+## Retrieving the best time and participants available for a specific meeting by its meetingId (challenge 1)
+# For Basic Result API where meetingId = 1110000001
+GET http://localhost:3000/basic/result?meetingId=1110000001 HTTP/1.1
+Content-Type: application/json
+
+# Expected AND Actual Outcome (test passed)
+
+# {
+#   "result": {
+#     "fromTime": "1030",
+#     "toTime": "1100",
+#     "participants": [
+#       {
+#         "participantId": 1100000001
+#       },
+#       {
+#         "participantId": 1100000002
+#       }
+#     ]
+#   }
+# }
+
+###
+## Retrieving the best time and participants available for a specific meeting by its meetingId (challenge 2)
+# For Basic Result API where meetingId = 1110000002
+GET http://localhost:3000/basic/result?meetingId=1110000002 HTTP/1.1
+Content-Type: application/json
+
+# Expected AND Actual Outcome (test passed)
+
+# {
+#   "result": {
+#     "fromTime": "1000",
+#     "toTime": "1100",
+#     "participants": [
+#       {
+#         "participantId": 1100000001
+#       }
+#     ]
+#   }
+# }
+
+###
+## Retrieving the best time and participants available for a specific meeting by its meetingId (challenge 3)
+# For Basic Result API where meetingId = 1110000003
+GET http://localhost:3000/basic/result?meetingId=1110000003 HTTP/1.1
+Content-Type: application/json
+
+# Expected AND Actual Outcome (test passed)
+
+# {
+#   "result": {
+#     "fromTime": "1045",
+#     "toTime": "1100",
+#     "participants": [
+#       {
+#         "participantId": 1100000004
+#       },
+#       {
+#         "participantId": 1100000005
+#       },
+#       {
+#         "participantId": 1100000006
+#       }
+#     ]
+#   }
+# }
+
+###
+##Retrieving the best time and participants available for a specific meeting by its meetingId (challenge 4)
+# For Basic Result API where meetingId = 1110000004
+GET http://localhost:3000/basic/result?meetingId=1110000004 HTTP/1.1
+Content-Type: application/json
+
+# Expected AND Actual Outcome (test passed)
+
+# {
+#   "result": {
+#     "fromTime": "1045",
+#     "toTime": "1100",
+#     "participants": [
+#       {
+#         "participantId": 1100000008
+#       },
+#       {
+#         "participantId": 1100000009
+#       },
+#       {
+#         "participantId": 1100000010
+#       }
+#     ]
+#   }
+# }
+
+###
+## Getting the info from meetingInfoUnavailability by meetingId
+# GET http://localhost:3000/advance/data?meetingId=9977867543 HTTP/1.1
+# Content-Type: application/json
+
+###
+## Inserting basic data required to fulfil challenges 1 to 4
+## When we enter duplicate info, it gives us an error "duplicate key value violates unique constraint"
+## (double click)
+# Basic Insert API for Meeting Time Voter
+POST http://localhost:3000/basic/insert HTTP/1.1
+Content-Type: application/json
+
+{
+    "data": [
+        {
+            "meetingId": 1110000001,
+            "availabilityId": 1000000001,
+            "participantId": 1100000001,
+            "startTime": "1000",
+            "endTime": "1045"
+        },
+        {
+            "meetingId": 1110000001,
+            "availabilityId": 1000000002,
+            "participantId": 1100000001,
+            "startTime": "1030",
+            "endTime": "1100"
+        },
+        {
+            "meetingId": 1110000001,
+            "availabilityId": 1000000003,
+            "participantId": 1100000002,
+            "startTime": "1030",
+            "endTime": "1115"
+        },
+        {
+            "meetingId": 1110000001,
+            "availabilityId": 1000000004,
+            "participantId": 1100000002,
+            "startTime": "1100",
+            "endTime": "1130"
+        },
+                {
+            "meetingId": 1110000002,
+            "availabilityId": 1000000005,
+            "participantId": 1100000001,
+            "startTime": "1000",
+            "endTime": "1100"
+        },
+        {
+            "meetingId": 1110000002,
+            "availabilityId": 1000000006,
+            "participantId": 1100000002,
+            "startTime": "1100",
+            "endTime": "1200"
+        },
+        {
+            "meetingId": 1110000002,
+            "availabilityId": 1000000007,
+            "participantId": 1100000003,
+            "startTime": "1200",
+            "endTime": "1300"
+        },
+        {
+            "meetingId": 1110000003,
+            "availabilityId": 1000000008,
+            "participantId": 1100000004,
+            "startTime": "1000",
+            "endTime": "1100"
+        },
+        {
+            "meetingId": 1110000003,
+            "availabilityId": 1000000009,
+            "participantId": 1100000005,
+            "startTime": "1045",
+            "endTime": "1230"
+        },
+        {
+            "meetingId": 1110000003,
+            "availabilityId": 1000000010,
+            "participantId": 1100000006,
+            "startTime": "1030",
+            "endTime": "1200"
+        },
+        {
+            "meetingId": 1110000003,
+            "availabilityId": 1000000011,
+            "participantId": 1100000007,
+            "startTime": "1100",
+            "endTime": "1500"
+        },
+        {
+            "meetingId": 1110000004,
+            "availabilityId": 1000000012,
+            "participantId": 1100000008,
+            "startTime": "1000",
+            "endTime": "1100"
+        },
+        {
+            "meetingId": 1110000004,
+            "availabilityId": 1000000013,
+            "participantId": 1100000009,
+            "startTime": "1045",
+            "endTime": "1230"
+        },
+        {
+            "meetingId": 1110000004,
+            "availabilityId": 1000000014,
+            "participantId": 1100000010,
+            "startTime": "1030",
+            "endTime": "1200"
+        },
+        {
+            "meetingId": 1110000004,
+            "availabilityId": 1000000015,
+            "participantId": 1100000011,
+            "startTime": "1100",
+            "endTime": "1500"
+        },
+        {
+            "meetingId": 1110000004,
+            "availabilityId": 1000000016,
+            "participantId": 1100000012,
+            "startTime": "1600",
+            "endTime": "1700"
+        }
+    ]
+}
+
+# Expected AND Actual Outcome (Test Passed)
+
+# {
+#     "result":"success"
+# }
+
+# Expected Outcome (For 2nd time)
+
+# {
+#     "result":"success"
+# }
+
+# Actual Outcome (For 2nd time, Test Failed)
+
+# {
+#     "error":"duplicate key value violates unique constraint \"meetinginfo_pkey\"",
+#     "code":500
+# }
+
+###
+## Inserting advance data required to fulfil challenges 1 to 4
+## When we enter duplicate info, it gives us an error "duplicate key value violates unique constraint"
+## (double click)
+# Basic Insert API for Meeting Time Voter
+POST http://localhost:3000/advance/insert HTTP/1.1
+Content-Type: application/json
+
+{
+    "data": [
+        {
+            "meetingId": 1110000001,
+            "unavailabilityId": 1000000001,
+            "participantId": 1100000001,
+            "startTime": "1000",
+            "endTime": "1045"
+        },
+        {
+            "meetingId": 1110000001,
+            "unavailabilityId": 1000000002,
+            "participantId": 1100000001,
+            "startTime": "1030",
+            "endTime": "1100"
+        },
+        {
+            "meetingId": 1110000001,
+            "unavailabilityId": 1000000003,
+            "participantId": 1100000002,
+            "startTime": "1030",
+            "endTime": "1115"
+        },
+        {
+            "meetingId": 1110000001,
+            "unavailabilityId": 1000000004,
+            "participantId": 1100000002,
+            "startTime": "1100",
+            "endTime": "1130"
+        },
+                {
+            "meetingId": 1110000002,
+            "unavailabilityId": 1000000005,
+            "participantId": 1100000001,
+            "startTime": "1000",
+            "endTime": "1100"
+        },
+        {
+            "meetingId": 1110000002,
+            "unavailabilityId": 1000000006,
+            "participantId": 1100000002,
+            "startTime": "1100",
+            "endTime": "1200"
+        },
+        {
+            "meetingId": 1110000002,
+            "unavailabilityId": 1000000007,
+            "participantId": 1100000003,
+            "startTime": "1200",
+            "endTime": "1300"
+        },
+        {
+            "meetingId": 1110000003,
+            "unavailabilityId": 1000000008,
+            "participantId": 1100000004,
+            "startTime": "1000",
+            "endTime": "1100"
+        },
+        {
+            "meetingId": 1110000003,
+            "unavailabilityId": 1000000009,
+            "participantId": 1100000005,
+            "startTime": "1045",
+            "endTime": "1230"
+        },
+        {
+            "meetingId": 1110000003,
+            "unavailabilityId": 1000000010,
+            "participantId": 1100000006,
+            "startTime": "1030",
+            "endTime": "1200"
+        },
+        {
+            "meetingId": 1110000003,
+            "unavailabilityId": 1000000011,
+            "participantId": 1100000007,
+            "startTime": "1100",
+            "endTime": "1500"
+        },
+        {
+            "meetingId": 1110000004,
+            "unavailabilityId": 1000000012,
+            "participantId": 1100000008,
+            "startTime": "1000",
+            "endTime": "1100"
+        },
+        {
+            "meetingId": 1110000004,
+            "unavailabilityId": 1000000013,
+            "participantId": 1100000009,
+            "startTime": "1045",
+            "endTime": "1230"
+        },
+        {
+            "meetingId": 1110000004,
+            "unavailabilityId": 1000000014,
+            "participantId": 1100000010,
+            "startTime": "1030",
+            "endTime": "1200"
+        },
+        {
+            "meetingId": 1110000004,
+            "unavailabilityId": 1000000015,
+            "participantId": 1100000011,
+            "startTime": "1100",
+            "endTime": "1500"
+        },
+        {
+            "meetingId": 1110000004,
+            "unavailabilityId": 1000000016,
+            "participantId": 1100000012,
+            "startTime": "1600",
+            "endTime": "1700"
+        }
+    ]
+}
+
+# Expected AND Actual Outcome (Test Passed)
+
+# {
+#     "result":"success"
+# }
+
+# Expected Outcome (For 2nd time)
+
+# {
+#     "result":"success"
+# }
+
+# Actual Outcome (For 2nd time, Test Failed)
+
+# {
+#     "error":"duplicate key value violates unique constraint \"meetinginfounavailability_pkey\"",
+#     "code":500
+# }
+
+###
+## Inserting advance data required to fulfil challenges 1 to 4
+## When we enter duplicate info, it gives us an error "duplicate key value violates unique constraint"
+## (double click)
+# POST http://localhost:3000/advance/insert HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "data": [
+#         {
+#             "meetingId": 2220000005,
+#             "unavailabilityId": 2000000002,
+#             "participantId": 2200000002,
+#             "startTime": "0000",
+#             "endTime": "2359"
+#         },
+#         {
+#             "meetingId": 2220000005,
+#             "unavailabilityId": 2000000003,
+#             "participantId": 2200000003,
+#             "startTime": "0000",
+#             "endTime": "2359"
+#         },
+#         {
+#             "meetingId": 2220000005,
+#             "unavailabilityId": 2000000004,
+#             "participantId": 2200000004,
+#             "startTime": "0000",
+#             "endTime": "2359"
+#         }
+#     ]
+# }
+
+
+###
+## Advance: Getting the best time and participants available for a specific meeting by meetingId and specifying fromTime and toTime
+# GET http://localhost:3000/advance/result?meetingId=1110000002&fromTime=1100&toTime=1200 HTTP/1.1
+# Content-Type: application/json
+
+###
+## Advance: Getting the best time and participants available for a specific meeting by meetingId and specifying fromTime and toTime
+# GET http://localhost:3000/advance/result?meetingId=1110000001&fromTime=2200&toTime=2300 HTTP/1.1
+# Content-Type: application/json
+
+# ###
+# ## Advance: Getting the best time and participants available for a specific meeting by meetingId and specifying fromTime and toTime
+# GET http://localhost:3000/advance/result?meetingId=2220000005&fromTime=0000&toTime=2359 HTTP/1.1
+# Content-Type: application/json
+
+###
+## Advance: Getting the best time and participants available
+# Where meetingId = 1110000001, fromTime = 1000 and toTime = 1200
+GET http://localhost:3000/advance/result?meetingId=1110000001&fromTime=1000&toTime=1200 HTTP/1.1
+Content-Type: application/json
+
+# Expected and Actual Outcome (Test Passed)
+
+# {
+#     "result": {
+#         "fromTime":"1130",
+#         "toTime":"1200",
+#         "participants": [
+#             {
+#                 "participantId":1100000001
+#             },
+#             {
+#                 "participantId":1100000002
+#             }
+#         ]
+#     }
+# }
+
+###
+## Advance: Getting the best time and participants available
+# Where meetingId = 1110000002, fromTime = 1000 and toTime = 1300
+GET http://localhost:3000/advance/result?meetingId=1110000002&fromTime=1000&toTime=1300 HTTP/1.1
+Content-Type: application/json
+
+# Expected and Actual Outcome (Test Passed)
+
+# {
+#     "result": {
+#         "fromTime":"1000",
+#         "toTime":"1100",
+#         "participants": [
+#             {
+#                 "participantId":1100000002
+#             },
+#             {
+#                 "participantId":1100000003
+#             }
+#         ]
+#     }
+# }
+
+###
+## Advance: Getting the best time and participants available
+# Where meetingId = 1110000003, fromTime = 1000 and toTime = 1200
+GET http://localhost:3000/advance/result?meetingId=1110000003&fromTime=1000&toTime=1200 HTTP/1.1
+Content-Type: application/json
+
+# Expected and Actual Outcome (Test Passed)
+
+# {
+#     "result": {
+#         "fromTime":"1000",
+#         "toTime":"1030",
+#         "participants": [
+#             {
+#                 "participantId":1100000005
+#             },
+#             {
+#                 "participantId":1100000006
+#             },
+#             {
+#                 "participantId":1100000007
+#             }
+#         ]
+#     }
+# }
+
+###
+## Advance: Getting the best time and participants available for a specific meeting by meetingId and specifying fromTime and toTime
+GET http://localhost:3000/advance/result?meetingId=1110000004&fromTime=1000&toTime=1700 HTTP/1.1
+Content-Type: application/json
+
+# Expected and Actual Outcome (Test Passed)
+
+# {
+#     "result": {
+#         "fromTime":"1500",
+#         "toTime":"1600",
+#         "participants": [
+#             {
+#                 "participantId":1100000008
+#             },
+#             {
+#                 "participantId":1100000009
+#             },
+#             {
+#                 "participantId":1100000010
+#             },
+#             {
+#                 "participantId":1100000011
+#             }
+#         ]
+#     }
+# }
+
+
+###
+
+
+## COIN CHANGE (IGNORE)
+# GET http://localhost:3000/basic/data?countryId=1100000001&value__gt=20&page=1&pageSize=1 HTTP/1.1
+# Content-Type: application/json
+ 
+# ###
+ 
+# GET http://localhost:3000/basic/data?value__gt=20&pageSize=1 HTTP/1.1
+# Content-Type: application/json
+ 
+# ###
+ 
+# GET http://localhost:3000/basic/result?countryId=1100000001&amount=200 HTTP/1.1
+# Content-Type: application/json
+# ###
+
+# POST http://localhost:3000/basic/insert HTTP/1.1
+# Content-Type: application/json
+ 
+# {
+#     "data": [
+#                 {
+#             "coinId": 1000000011,
+#             "countryId": 1100000002,
+#             "value": 1
+#         },
+#                 {
+#             "coinId": 1000000012,
+#             "countryId": 1100000002,
+#             "value": 5
+#         },
+#         {
+#             "coinId": 1000000013,
+#             "countryId": 1100000002,
+#             "value": 10
+#         },
+#         {
+#             "coinId": 1000000014,
+#             "countryId": 1100000002,
+#             "value": 20
+#         },
+#         {
+#             "coinId": 1000000015,
+#             "countryId": 1100000002,
+#             "value": 50
+#         },
+#         {
+#             "coinId": 1000000016,
+#             "countryId": 1100000002,
+#             "value": 100
+#         }
+#     ]
+# }
+
+# ###
+ 
+# POST http://localhost:3000/basic/insert HTTP/1.1
+# Content-Type: application/json
+ 
+# {
+#     "data": [
+#                 {
+#             "coinId": 1000000111,
+#             "countryId": 1100000022,
+#             "value": 1
+#         },
+#                 {
+#             "coinId": 1000000112,
+#             "countryId": 1100000022,
+#             "value": 5
+#         },
+#         {
+#             "coinId": 1000000113,
+#             "countryId": 1100000022,
+#             "value": 10
+#         },
+#         {
+#             "coinId": 1000000114,
+#             "countryId": 1100000022,
+#             "value": 20
+#         },
+#         {
+#             "coinId": 1000000115,
+#             "countryId": 1100000022,
+#             "value": 50
+#         },
+#         {
+#             "coinId": 1000000116,
+#             "countryId": 1100000022,
+#             "value": 100
+#         }
+#     ]
+# }
